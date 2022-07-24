@@ -22,7 +22,7 @@ output "nat_public_ips" {
 }
 
 # Key Pair
-output "key_pairs_private_key_pem" {
-  value = module.key_pair.private_key_pem
-  sensitive   = true
-}
+# output "key_pairs_private_key_pem" {
+#   value = nonsensitive(module.key_pair.private_key_pem)
+#   # sensitive   = true
+# }
