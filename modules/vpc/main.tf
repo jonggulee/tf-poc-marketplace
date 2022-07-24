@@ -85,6 +85,10 @@ resource "aws_route_table" "pri" {
     gateway_id = aws_nat_gateway.natgw.*.id[0]
   }
   tags = merge(var.tags, tomap({ "Name" = format("%s-pri-rt", var.name)}))
+
+    lifecycle {
+        ignore_changes = all
+  }
 }
 
 resource "aws_route_table" "res" {
