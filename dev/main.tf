@@ -22,6 +22,7 @@ module "vpc" {
 module "key_pair" {
   source = "../modules/key-pair"
   # key_name           = "dev-marketplace-front-key"
-  key_name           = ["dev-marketplace-front-key", "dev-marketplace-api-key", "test"]
+  key_name           = ["dev-marketplace-front-key", "dev-marketplace-api-key"]
+  key_path           = ["./key/dev-marketplace-front-key.pem", "./key/dev-marketplace-api-key.pem"]
   create_private_key = true
 }
