@@ -26,8 +26,14 @@ variable "key_name" {
   type        = list(any)
   default     = []
 }
-#####################################
 
+variable "key_path" {
+  description = "The name for the key pair. Conflicts with `key_name_prefix`"
+  type        = list(any)
+  default     = []
+}
+
+#####################################
 variable "key_name_prefix" {
   description = "Creates a unique name beginning with the specified prefix. Conflicts with `key_name`"
   type        = string
