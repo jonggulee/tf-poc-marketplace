@@ -26,3 +26,8 @@ output "nat_public_ips" {
 #   value = nonsensitive(module.key_pair.private_key_pem)
 #   # sensitive   = true
 # }
+
+
+output "key_pairs_key_pair_name" {
+  value = module.key_pair.key_pair_name
+}
