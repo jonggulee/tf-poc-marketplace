@@ -37,16 +37,8 @@ output "private_key_openssh" {
   sensitive   = true
 }
 
-# output "private_key_pem" {
-#   description = "Private key data in PEM (RFC 1421) format"
-#   value       = try(trimspace(tls_private_key.this[0].private_key_pem), "")
-#   sensitive   = true
-# }
-
 output "private_key_pem" {
   description = "Private key data in PEM (RFC 1421) format"
-  # value       = try(trimspace(tls_private_key.this[0].private_key_pem), "")
-  # value       = trimspace(tls_private_key.this.*.private_key_pem)
   value       = ["${tls_private_key.this.*.private_key_pem}"]
   sensitive   = true
 }
